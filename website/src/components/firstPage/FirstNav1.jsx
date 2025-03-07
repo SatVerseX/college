@@ -10,7 +10,7 @@ const Navbar = () => {
         {/* College Logo */}
         <div className="flex items-center">
           <img 
-            src="/DALL·E 2025-02-15 23.01.33 - A colorful and attractive logo for 'Gurukul'. The logo should feature a traditional Indian temple or ancient architecture representing a place of lear.webp" 
+            src="/SlbdF6o0_W0y-ZT9y2cLy.jpg" 
             alt="College Logo" 
             className="w-22 h-auto rounded-full" 
           />
