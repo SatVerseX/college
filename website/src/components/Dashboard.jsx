@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     // Fetch user data and redirect based on role
     axios
-      .get("http://localhost:5000/api/user", {
+      .get("https://college-backend-khaki.vercel.app/api/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

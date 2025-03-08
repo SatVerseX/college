@@ -26,7 +26,7 @@ const Profile = () => {
 
     const fetchProfile = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/profile", {
+        const response = await axios.get("https://college-backend-khaki.vercel.app/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data);
@@ -48,7 +48,7 @@ const Profile = () => {
         email: formData.email || user.email,
       };
 
-      await axios.put("http://localhost:5000/api/profile", updatedData, {
+      await axios.put("https://college-backend-khaki.vercel.app/api/profile", updatedData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -66,7 +66,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/api/change-password",
+        "https://college-backend-khaki.vercel.app/api/change-password",
         { oldPassword: formData.oldPassword, newPassword: formData.newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +88,7 @@ const Profile = () => {
 
     const token = localStorage.getItem("token");
     axios
-      .post("http://localhost:5000/api/upload-profile-picture", formData, {
+      .post("https://college-backend-khaki.vercel.app/api/upload-profile-picture", formData, {
         headers: { Authorization: `Bearer ${token}`, "Content-Type": "multipart/form-data" },
       })
       .then((response) => {
@@ -112,7 +112,7 @@ const Profile = () => {
           <div className="flex flex-col items-center space-y-3">
             <div className="relative w-32 h-32">
               <img
-                src={file ? URL.createObjectURL(file) : user.profilePicture ? `http://localhost:5000${user.profilePicture}` : "/default-profile.jpg"}
+                src={file ? URL.createObjectURL(file) : user.profilePicture ? `https://college-backend-khaki.vercel.app${user.profilePicture}` : "/default-profile.jpg"}
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full border-4 border-gray-300 cursor-pointer"
                 onClick={() => document.getElementById("file-input").click()}

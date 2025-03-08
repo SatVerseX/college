@@ -38,7 +38,7 @@ const ScheduleManagement = () => {
       return;
     }
     axios
-      .get("http://localhost:5000/api/user", {
+      .get("https://college-backend-khaki.vercel.app/api/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -56,7 +56,7 @@ const ScheduleManagement = () => {
     if (user) {
       const token = localStorage.getItem("token");
       axios
-        .get("http://localhost:5000/api/schedule", {
+        .get("https://college-backend-khaki.vercel.app/api/schedule", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setSchedules(res.data))
@@ -77,7 +77,7 @@ const ScheduleManagement = () => {
   
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/schedule/${selectedSchedule._id}`,
+        `https://college-backend-khaki.vercel.app/api/schedule/${selectedSchedule._id}`,
         {
           day: selectedSchedule.day,
           startTime: newStartTime,
@@ -109,7 +109,7 @@ const ScheduleManagement = () => {
   
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/schedule",
+        "https://college-backend-khaki.vercel.app/api/schedule",
         {
           className,
           professorName,

@@ -96,10 +96,10 @@ const Navbar = () => {
               Admissions
             </Link>
             <Link 
-              href="#contact" 
+              to="/login" 
               className="satish bg-white text-blue-800 font-bold px-5 py-2 rounded-lg shadow-md no-underline transition transform hover:scale-105 hover:shadow-lg"
             >
-              Apply Now
+              Login
             </Link>
           </div>
         </div>

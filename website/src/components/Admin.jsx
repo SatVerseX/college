@@ -15,7 +15,7 @@ const AdminPanel = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/schedule", {
+      .get("https://college-backend-khaki.vercel.app/api/schedule", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => setSchedule(res.data))
@@ -25,7 +25,7 @@ const AdminPanel = () => {
   const handleAddClass = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/schedule", newClass, {
+      .post("https://college-backend-khaki.vercel.app/api/schedule", newClass, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then(() => window.location.reload())

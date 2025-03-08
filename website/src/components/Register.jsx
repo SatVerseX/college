@@ -33,7 +33,7 @@ const Register = () => {
       if (role === "Student") {
         payload.semester = semester;
       }
-      await axios.post("http://localhost:5000/api/register", payload);
+      await axios.post("https://college-backend-khaki.vercel.app/api/register", payload);
       toast.success("Registration successful! Please login.");
       navigate("/login");
     } catch (error) {
@@ -86,7 +86,7 @@ const Register = () => {
             onChange={(e) =>
               setFormData({ ...formData, role: e.target.value })
             }
-            className="w-full bg-white/30 border border-white/50 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-white transition duration-300"
+            className="w-full bg-white/30 border border-white/50 rounded-lg py-3 px-4 text-black focus:outline-none focus:ring-2 focus:ring-white transition duration-300"
           >
             <option value="Student">Student</option>
             <option value="Professor">Professor</option>

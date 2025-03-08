@@ -21,7 +21,7 @@ const StudentDashboard = () => {
       navigate("/login");
       return;
     }
-    axios.get("http://localhost:5000/api/user", { headers: { Authorization: `Bearer ${token}` } })
+    axios.get("https://college-backend-khaki.vercel.app/api/user", { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => {
         setUser(response.data);
         setLoading(false);
@@ -35,11 +35,11 @@ const StudentDashboard = () => {
 
   useEffect(() => {
     if (user) {
-      axios.get("http://localhost:5000/api/schedule", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      axios.get("https://college-backend-khaki.vercel.app/api/schedule", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
         .then((res) => setSchedule(res.data));
-      axios.get("http://localhost:5000/api/leaves", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      axios.get("https://college-backend-khaki.vercel.app/api/leaves", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
         .then((res) => setLeaveStatus(res.data));
-      axios.get("http://localhost:5000/api/announcements", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      axios.get("https://college-backend-khaki.vercel.app/api/announcements", { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
         .then((res) => setAnnouncements(res.data));
     }
   }, [user]);

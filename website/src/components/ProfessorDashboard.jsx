@@ -23,7 +23,7 @@ const ProfessorDashboard = () => {
 
     // Fetch user details
     axios
-      .get("http://localhost:5000/api/user", {
+      .get("https://college-backend-khaki.vercel.app/api/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -39,7 +39,7 @@ const ProfessorDashboard = () => {
 
     // Fetch existing announcements
     axios
-      .get("http://localhost:5000/api/announcements", {
+      .get("https://college-backend-khaki.vercel.app/api/announcements", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setAnnouncements(res.data))
@@ -52,7 +52,7 @@ const ProfessorDashboard = () => {
   const handleNewAnnouncement = (newAnnouncement) => {
     axios
       .post(
-        "http://localhost:5000/api/announcement",
+        "https://college-backend-khaki.vercel.app/api/announcement",
         { message: newAnnouncement },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       )

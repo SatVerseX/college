@@ -19,7 +19,7 @@ const RecentAnnouncements = () => {
     }
 
     axios
-      .get("http://localhost:5000/api/user", {
+      .get("https://college-backend-khaki.vercel.app/api/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -38,7 +38,7 @@ const RecentAnnouncements = () => {
       // Fetch announcements after user is set
       const token = localStorage.getItem("token");
       axios
-        .get("http://localhost:5000/api/announcements", {
+        .get("https://college-backend-khaki.vercel.app/api/announcements", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setAnnouncements(res.data))

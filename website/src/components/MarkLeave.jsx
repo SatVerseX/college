@@ -49,7 +49,7 @@ const MarkLeave = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/mark-leave", requestData, {
+      await axios.post("https://college-backend-khaki.vercel.app/api/mark-leave", requestData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setSuccessMessage("Leave marked successfully!");

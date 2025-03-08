@@ -19,7 +19,7 @@ const PostAnnouncement = () => {
 
     axios
       .post(
-        "http://localhost:5000/api/announcement",
+        "https://college-backend-khaki.vercel.app/api/announcement",
         { message: newAnnouncement },
         { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
       )

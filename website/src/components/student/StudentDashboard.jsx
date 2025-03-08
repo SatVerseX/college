@@ -32,7 +32,7 @@ const StudentDashboard = () => {
       return;
     }
     axios
-      .get("http://localhost:5000/api/user", {
+      .get("https://college-backend-khaki.vercel.app/api/user", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -49,17 +49,17 @@ const StudentDashboard = () => {
   useEffect(() => {
     if (user) {
       axios
-        .get("http://localhost:5000/api/schedule", {
+        .get("https://college-backend-khaki.vercel.app/api/schedule", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setSchedule(res.data));
       axios
-        .get("http://localhost:5000/api/leaves", {
+        .get("https://college-backend-khaki.vercel.app/api/leaves", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setLeaveStatus(res.data));
       axios
-        .get("http://localhost:5000/api/announcements", {
+        .get("https://college-backend-khaki.vercel.app/api/announcements", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => setAnnouncements(res.data));
